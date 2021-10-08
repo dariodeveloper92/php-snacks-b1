@@ -63,17 +63,17 @@
 
     <?php 
         //Get
-        $getname = $_GET['name'];
-        $getmail = $_GET['mail'];
-        $getage = $_GET['age'];
+        $getName = $_GET['name'];
+        $getMail = $_GET['mail'];
+        $getAge = $_GET['age'];
 
         //Condizione if
-        if(empty($getmail))
+        if(empty($getMail))
        {
            echo 'errore';
        }
        else {
-           if (strpos($getmail, '@') !== false && strpos($getmail, '.') !== false)
+           if (strpos($getMail, '@') !== false && strpos($getMail, '.') !== false && (strlen($getName)>3) !== false && is_numeric($getAge) !== false )
            {
                echo 'Accesso riuscito';
            }
