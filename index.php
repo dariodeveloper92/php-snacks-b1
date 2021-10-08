@@ -12,6 +12,52 @@
     <h4>Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario:</h4>
     <!-- Risultato: Olimpia Milano - Cantù | 55-60 -->
 
+    <?php 
+        $partite = [
+            [
+                'squadraCasa' => ' Olimpia Milano',
+                'sqaudraOspite' => 'Cantù',
+                'puntiCasa' => 55,
+                'puntiOspite' => 60
+            ],
+            [
+                'squadraCasa' => ' Roma',
+                'sqaudraOspite' => 'Milano',
+                'puntiCasa' => 60,
+                'puntiOspite' => 70
+            ],
+            [
+                'squadraCasa' => ' Genova',
+                'sqaudraOspite' => 'Torino',
+                'puntiCasa' => 50,
+                'puntiOspite' => 65
+            ],
+            [
+                'squadraCasa' => '  Firenze',
+                'sqaudraOspite' => 'Venezia',
+                'puntiCasa' => 65,
+                'puntiOspite' => 50
+            ],
+            [
+                'squadraCasa' => ' Palermo',
+                'sqaudraOspite' => 'Bologna',
+                'puntiCasa' => 65,
+                'puntiOspite' => 70
+            ],
+            [
+                'squadraCasa' => ' Bari',
+                'sqaudraOspite' => 'Napoli',
+                'puntiCasa' => 50,
+                'puntiOspite' => 65
+            ],
+        ];
+
+        //ciclo for
+        for($i = 0; $i < count($partite); $i++ ) {
+            echo '<li>' . $partite[$i]['squadraCasa'] . ' - ' . $partite[$i]['sqaudraOspite'] . ' | ' . $partite[$i]['puntiCasa'] . '-' . $partite[$i]['puntiOspite'] . '</li>' . '<br/>';
+        }
+    ?>
+
     <h1> Snack 2</h1>
     <h4>Passare come parametri GET name, mail e age: </h4>
 </body>
