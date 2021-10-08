@@ -7,7 +7,7 @@
     <title>PHP Snacks blocco 1</title>
 </head>
 <body>
-    
+    <!-- SNACK 1 ------------------------------------------------------------------------------------->
     <h1> Snack 1</h1>
     <h4>Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario:</h4>
     <!-- Risultato: Olimpia Milano - Cantù | 55-60 -->
@@ -58,6 +58,7 @@
         }
     ?>
 
+    <!-- SNACK 2 ------------------------------------------------------------------------------------->
     <h1> Snack 2</h1>
     <h4>Passare come parametri GET name, mail e age: </h4>
 
@@ -73,7 +74,7 @@
            echo 'errore';
        }
        else {
-           if (strpos($getMail, '@') !== false && strpos($getMail, '.') !== false && (strlen($getName)>3) !== false && is_numeric($getAge) !== false )
+           if (strpos($getMail, '@') !== false && strpos($getMail, '.') !== false && strlen($getName) > 3 && is_numeric($getAge))
            {
                echo 'Accesso riuscito';
            }
@@ -89,4 +90,5 @@
 </body>
 </html>
 
-<!-- index.php?mail=elon.musk@gmail.com -->
+
+<!--url: http://localhost/php-snacks-b1/index.php?mail=elon.musk@gmail.com&name=dario&age=29 -->
