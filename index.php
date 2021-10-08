@@ -62,42 +62,31 @@
     <h4>Passare come parametri GET name, mail e age: </h4>
 
     <?php 
-        $mails = [
-            [
-                'name' => 'Mark',
-                'mail' => 'mark.zuckerberg@gmail.com',
-                'age' => 37,
-            ],
-            [
-                'name' => 'Elon ',
-                'mail' => 'elon.musk@gmail.com',
-                'age' => 50,
-            ],
-            [
-                'name' => 'Jeff',
-                'mail' => 'jeff.bezos@gmail.com',
-                'age' => 57,
-            ],
-        ];
-
-        //ciclo for
-        for($i = 0; $i < count($mails); $i++ ) {
-            echo '<li>' . $mails[$i]['name'] . ' - ' . $mails[$i]['mail'] . ' - ' . $mails[$i]['age'] . '</li>' . '<br/>';
-        }
-
         //Get
         $getname = $_GET['name'];
         $getmail = $_GET['mail'];
         $getage = $_GET['age'];
 
-        //stampo array
-        var_dump($mails);
+        //Condizione if
+        if(empty($getmail))
+       {
+           echo 'errore';
+       }
+       else {
+           if (strpos($getmail, '@') !== false && strpos($getmail, '.') !== false)
+           {
+               echo 'Accesso riuscito';
+           }
+           else {
+                echo 'Accesso negato';
+           }
+       }
 
-        
 
     ?>
 
-    <!-- stampo array in h4 -->
-    <!-- <h4>//<?php var_dump($mails)?></h4> -->
+    
 </body>
 </html>
+
+<!-- index.php?mail=elon.musk@gmail.com -->
