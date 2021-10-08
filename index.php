@@ -60,5 +60,44 @@
 
     <h1> Snack 2</h1>
     <h4>Passare come parametri GET name, mail e age: </h4>
+
+    <?php 
+        $mails = [
+            [
+                'name' => 'Mark',
+                'mail' => 'mark.zuckerberg@gmail.com',
+                'age' => 37,
+            ],
+            [
+                'name' => 'Elon ',
+                'mail' => 'elon.musk@gmail.com',
+                'age' => 50,
+            ],
+            [
+                'name' => 'Jeff',
+                'mail' => 'jeff.bezos@gmail.com',
+                'age' => 57,
+            ],
+        ];
+
+        //ciclo for
+        for($i = 0; $i < count($mails); $i++ ) {
+            echo '<li>' . $mails[$i]['name'] . ' - ' . $mails[$i]['mail'] . ' - ' . $mails[$i]['age'] . '</li>' . '<br/>';
+        }
+
+        //Get
+        $getname = $_GET['name'];
+        $getmail = $_GET['mail'];
+        $getage = $_GET['age'];
+
+        //stampo array
+        var_dump($mails);
+
+        
+
+    ?>
+
+    <!-- stampo array in h4 -->
+    <!-- <h4>//<?php var_dump($mails)?></h4> -->
 </body>
 </html>
