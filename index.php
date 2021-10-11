@@ -17,38 +17,38 @@
             [
                 'squadraCasa' => ' Olimpia Milano',
                 'sqaudraOspite' => 'Cantù',
-                'puntiCasa' => 55,
-                'puntiOspite' => 60
+                'puntiCasa' => rand(50, 90),
+                'puntiOspite' => rand(50, 90)
             ],
             [
                 'squadraCasa' => ' Roma',
                 'sqaudraOspite' => 'Milano',
-                'puntiCasa' => 60,
-                'puntiOspite' => 70
+                'puntiCasa' => rand(50, 90),
+                'puntiOspite' => rand(50, 90)
             ],
             [
                 'squadraCasa' => ' Genova',
                 'sqaudraOspite' => 'Torino',
-                'puntiCasa' => 50,
-                'puntiOspite' => 65
+                'puntiCasa' => rand(50, 90),
+                'puntiOspite' => rand(50, 90)
             ],
             [
                 'squadraCasa' => '  Firenze',
                 'sqaudraOspite' => 'Venezia',
-                'puntiCasa' => 65,
-                'puntiOspite' => 50
+                'puntiCasa' => rand(50, 90),
+                'puntiOspite' => rand(50, 90)
             ],
             [
                 'squadraCasa' => ' Palermo',
                 'sqaudraOspite' => 'Bologna',
-                'puntiCasa' => 65,
-                'puntiOspite' => 70
+                'puntiCasa' => rand(50, 90),
+                'puntiOspite' => rand(50, 90)
             ],
             [
                 'squadraCasa' => ' Bari',
                 'sqaudraOspite' => 'Napoli',
-                'puntiCasa' => 50,
-                'puntiOspite' => 65
+                'puntiCasa' => rand(50, 90),
+                'puntiOspite' => rand(50, 90)
             ],
         ];
 
@@ -86,7 +86,112 @@
 
     ?>
 
+    <!-- SNACK 3 ------------------------------------------------------------------------------------->
+    <h1> Snack 3</h1>
+    <h4>Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore
+        un array di post associati a quella data. Stampare ogni data con i relativi post.   
+    </h4>
     
+    <?php 
+        $posts = [
+            '10/01/2019' => [
+                [
+                    'title' => 'Post 1',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 1'
+                ],
+                [
+                    'title' => 'Post 2',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 2'
+                ],
+            ],
+            '10/02/2019' => [
+                [
+                    'title' => 'Post 3',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 3'
+                ]
+            ],
+            '15/05/2019' => [
+                [
+                    'title' => 'Post 4',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 4'
+                ],
+                [
+                    'title' => 'Post 5',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 5'
+                ],
+                [
+                    'title' => 'Post 6',
+                    'author' => 'Michele Papagni',
+                    'text' => 'Testo post 6'
+                ]
+            ],
+        ];
+
+        foreach ($posts as $key => $value) {
+            echo $key . '<br/>';
+            foreach($value as $post) {
+                echo '<ul><li>' .  'title:' . $post['title'] . '</li></ul>' . '<br/>';
+                echo '<ul><li>' . 'author:' . $post['author'] . '</li></ul>' .  '<br/>';
+                echo '<ul><li>' . 'text:' . $post['text'] . '</li></ul>' . '<br/>';
+                echo '<hr>';
+            }
+            
+            
+        }
+    ?>
+
+    <!-- SNACK 4 ------------------------------------------------------------------------------------->
+    <h1> Snack 4 </h1>
+    <h4>Creare un array con 15 numeri casuali ( da 1 a 100), tenendo conto che l’array non dovrà 
+        contenere lo stesso numero più di una volta.  
+    </h4>
+
+    <?php 
+        $randomNum = [];
+
+        while (count($randomNum) < 15) { // while
+            $randomNum[] = rand(1, 100); // numero casuale
+
+            $newNum = rand(1,100);
+            if(! in_array($newNum, $randomNum)) { //condizione: se nell'array è presente lo stesso numero
+                $randomNum[] = $newNum; 
+            }
+        }
+
+        echo '<pre>';
+        '<li>' . var_dump($randomNum) . '</li>';
+        echo '</pre>';
+    ?>
+
+    <!-- SNACK 5 ------------------------------------------------------------------------------------->
+    <h1> Snack 5 </h1>
+    <h4>Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e 
+        suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo.
+    </h4>
+    
+    <?php 
+        $paragrafo = 'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt 
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis 
+        suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt 
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis 
+        suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.'; 
+
+        // explode
+        $myArray = explode('.', $paragrafo);
+
+        foreach($myArray as $key => $myArray) {
+            if(! empty($myArray)) {
+                echo 'paragrafo n°' . $key . ' : ' . $myArray . '<br/>';
+            }
+        }
+    ?>
+
 </body>
 </html>
 
