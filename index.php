@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>PHP Snacks blocco 1</title>
 </head>
 <body>
@@ -192,6 +193,51 @@
         }
     ?>
 
+     <!-- SNACK 6 ------------------------------------------------------------------------------------->
+     <h1> Snack 6 </h1>
+    <h4>Utilizzare questo array: https://pastebin.com/CkX3680A. Includerlo in un file database.php... 
+        Stampiamo poi il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.
+    </h4>
+
+
+    <div class="gray">
+        <?php 
+        include __DIR__ . '/database.php';
+            foreach($db['teachers'] as $key => $teacher) {
+                echo '<h5>' . 'name: ' . $teacher['name'] . ':'  . '</h5>' . '<br/>';
+                echo '<h5>' . 'lastname: ' . $teacher['lastname'] . ':'  . '</h5>' . '<br/>';
+            }
+           
+         ?>
+    </div>
+    <div class="green">
+        <?php 
+        include __DIR__ . '/database.php';
+            foreach($db['pms'] as $key => $pm) {
+                echo '<h5>' . 'name: '  . $pm['name'] . ':' . '</h5>' . '<br/>';
+                echo '<h5>' . 'lastname: ' . $teacher['lastname'] . ':'  . '</h5>' . '<br/>';
+            }
+        ?>
+    </div>
+
+       <!-- SNACK 7 ------------------------------------------------------------------------------------->
+       <h1> Snack 7 </h1>
+    <h4>Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e 
+        un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
+    </h4>
+
+    <?php 
+    /* import database */
+    include __DIR__ . '/database.php';
+    /* import function */
+    include __DIR__ . '/function.php';
+
+        foreach ($students as $alunno) {
+            echo 'Alunno : ' . $alunno['name'] . ' ' . $alunno['lastname'] . ' ' . media($alunno['voti']) . '<br/>'; 
+        }
+    ?>
+
+    
 </body>
 </html>
 
