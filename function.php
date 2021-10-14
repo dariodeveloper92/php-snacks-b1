@@ -11,3 +11,15 @@
 
     media('voti');
 ?>
+
+<!-- snack 8 -->
+<?php 
+    $visibility = [];
+    foreach($ads as $ad) {
+        if($ad['is_active']) {
+            $visibility[] = $ad;
+        }
+    }
+
+    $currentActive = $visibility[rand(0, count($visibility) -1)];
+?>

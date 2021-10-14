@@ -237,7 +237,27 @@
         }
     ?>
 
+    <!-- SNACK 8 ------------------------------------------------------------------------------------->
+    <h1> Snack 8 </h1>
+    <h4>Partendo da questo array: https://www.codepile.net/pile/Po60bjgQ
+        Ad ogni refresh della pagina visualizzare una pubblicità a schermo, tenendo conto che possono essere 
+        sorteggiate solo quelle is_active true.
+    </h4>
     
+    <div class="container-snack8">
+        <a href="<?php echo $currentActive['link'] ?>">
+            <img src="<?php echo $currentActive['image_path'] ?>">
+        </a>
+
+        <?php 
+            /* import database */
+            include __DIR__ . '/database.php';
+            /* import function */
+            include __DIR__ . '/function.php';
+        ?>
+
+    </div>
+        
 </body>
 </html>
 
