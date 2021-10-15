@@ -246,18 +246,51 @@
     
     <div class="container-snack8">
         <a href="<?php echo $currentActive['link'] ?>">
-            <img src="<?php echo $currentActive['image_path'] ?>">
+            <img class="img_bunner" src="<?php echo $currentActive['image_path'] ?>">
         </a>
 
         <?php 
             /* import database */
-            include __DIR__ . '/database.php';
+            //include __DIR__ . '/database.php';
             /* import function */
-            include __DIR__ . '/function.php';
+            //include __DIR__ . '/function.php';
         ?>
 
     </div>
-        
+    
+    <!-- SNACK 9A ------------------------------------------------------------------------------------->
+    <h1> Snack 9A </h1>
+    <h4>Partiamo da questo array di hotel. https://www.codepile.net/pile/OEWY7Q1G
+        Stampare tutti i nostri hotel con tutti i dati disponibili.
+        Avremo un file PHP con il nostro “database” e un file con tutta la logica.
+    </h4>
+
+    <?php 
+    /* import database */
+    //include __DIR__ . '/database.php';
+
+        foreach ($hotels as $hotel) {
+            echo $hotel['name'] . ' - ' . $hotel['description'] . ' - ' . $hotel['parking'] . ' - ' . $hotel['vote'] . ' - ' . $hotel['distance_to_center'] . '<br/>'; 
+        }
+    ?>
+    
+    <!-- SNACK 9B ------------------------------------------------------------------------------------->
+    <h1> Snack 9B </h1>
+    <h4>Attraverso un parametro GET da inserire direttamente nell’url (uno alla volta), filtrare gli hotel 
+        che hanno un parcheggio, numero minimo di stelle o massima lontananza dal centro.
+    </h4>
+
+    <?php 
+    /* import database */
+    //include __DIR__ . '/database.php';
+    /* import function */
+    include_once __DIR__ . '/function.php';
+
+        foreach ($filteredHotels as $hotel) {
+            echo $hotel['name'] . '<br/>'; 
+        }
+    ?>
+
 </body>
 </html>
 
