@@ -39,7 +39,7 @@
             ],
         'Filippo' => 
             [
-                'name' => 'Rossi',
+                'name' => 'Filippo',
                 'lastname' => 'Rossi',
                 'voti' => [10, 9, 8, 7, 8, 9, 10]
             ],    

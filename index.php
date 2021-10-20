@@ -215,7 +215,7 @@
         include __DIR__ . '/database.php';
             foreach($db['pms'] as $key => $pm) {
                 echo '<h5>' . 'name: '  . $pm['name'] . ':' . '</h5>' . '<br/>';
-                echo '<h5>' . 'lastname: ' . $teacher['lastname'] . ':'  . '</h5>' . '<br/>';
+                echo '<h5>' . 'lastname: ' . $pm['lastname'] . ':'  . '</h5>' . '<br/>';
             }
         ?>
     </div>
@@ -228,7 +228,7 @@
 
     <?php 
     /* import database */
-    include __DIR__ . '/database.php';
+    //include __DIR__ . '/database.php';
     /* import function */
     include __DIR__ . '/function.php';
 
@@ -290,6 +290,19 @@
             echo $hotel['name'] . '<br/>'; 
         }
     ?>
+
+    <!-- SNACK 10 ------------------------------------------------------------------------------------->
+    <h1> Snack 10 </h1>
+    <h4>Creiamo due pagine php. La prima farà una chiamata GET alla seconda attraverso un form. Il form 
+        avrà un input di testo in cui inserire il nome di un invitato. Inseriamo nell’altro file una 
+        lista di invitati. Se la nostra query è contenuta nella lista degli invitati stampare ok, altrimenti ko.
+    </h4>
+
+    <form action="server.php">
+        <label for="name"> Name: </label>
+        <input type="text" id="name" name="name"><br><br>
+        <input type="submit"> <!-- invia -->
+    </form>  
 
 </body>
 </html>

@@ -39,14 +39,14 @@
     }   
     else if (isset($_GET["stars"])) {
         foreach ($hotels as $hotel) {
-            if($hotel['stars'] == $_GET['stars']) {
+            if($hotel['vote'] == $_GET['stars']) {
                 array_push($filteredHotels, $hotel);    
             }
         } 
     }  
     else if(isset($_GET["center"])) {
         foreach ($hotels as $hotel) {
-            if($hotel['center'] == $_GET['center']) {
+            if($hotel['distance_to_center'] == $_GET['center']) {
                 array_push($filteredHotels, $hotel);    
             }
         }
